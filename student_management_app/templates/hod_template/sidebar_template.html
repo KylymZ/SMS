@@ -1,0 +1,21 @@
+{% load static %}
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <div class="sidebar">
+  <nav class="mt-2">    
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">       
+            <li class="nav-item">
+              {% url 'staff_feedback_message' as staff_feedback_message %}
+              <a href="{{ staff_feedback_message }}" class="nav-link {% if request.path == staff_feedback_message %} active {% endif %}">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Отзывы от преподавателей
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
