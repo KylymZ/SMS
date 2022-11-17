@@ -1,7 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 
 {% block page_title %}
-    Student Feedback
+    Обратная связь со студентом
 {% endblock page_title %}
 
 {% block main_content %}
@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Student Feedback</h3>
+                            <h3 class="card-title">Обратная связь</h3>
                         </div>
                         <!-- /.card-header -->
 
@@ -25,12 +25,12 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Student ID</th>
-                                    <th>Student Name</th>
-                                    <th>Student Session</th>
-                                    <th>Message</th>
-                                    <th>Sended On</th>
-                                    <th>Reply</th>
+                                   
+                                    <th>Имя</th>
+                                    
+                                    <th>Отправленное сообщение</th>
+                                    <th>Дата отправки</th>
+                                    <th>Ответ</th>
                                 </tr>
                                 </thead>
 
@@ -38,14 +38,14 @@
                                 <tbody>
                                 <tr>
                                     <td>{{ feedback.id }}</td>
-                                    <td>{{ feedback.student_id.admin.id }}</td>
+                                  
                                     <td>{{ feedback.student_id.admin.first_name }} {{ feedback.student_id.admin.last_name }}</td>
-                                    <td>{{ feedback.student_id.session_year_id.session_start_year }} - {{ feedback.student_id.session_year_id.session_end_year }}</td>
+                                
                                     <td>{{ feedback.feedback }}</td>
                                     <td>{{ feedback.created_at }}</td>
                                     <td>
                                         {% if feedback.feedback_reply == "" %}
-                                            <button class="btn btn-success reply_open_modal" data-toggle="modal" data-target="#replyModal">Reply</button>
+                                            <button class="btn btn-success reply_open_modal" data-toggle="modal" data-target="#replyModal">Ответить</button>
                                         {% else %}
                                             {{ feedback.feedback_reply }}
                                         {% endif %}
