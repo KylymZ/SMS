@@ -139,10 +139,10 @@ def student_feedback_save(request):
         try:
             add_feedback = FeedBackStudent(student_id=student_obj, feedback=feedback, feedback_reply="")
             add_feedback.save()
-            messages.success(request, "Feedback Sent.")
+            messages.success(request, "Сообщение отправлено")
             return redirect('student_feedback')
         except:
-            messages.error(request, "Failed to Send Feedback.")
+            messages.error(request, "Ошибка при отправке")
             return redirect('student_feedback')
 
 
